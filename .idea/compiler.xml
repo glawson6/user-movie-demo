@@ -25,7 +25,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="user-movie-demo" target="1.5" />
+      <module name="user-movie-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
