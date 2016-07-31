@@ -8,6 +8,7 @@ public class MovieDTO {
     private String movieId;
     private String movieName;
     private String genre;
+    private Double rating;
 
     public String getGenre() {
         return genre;
@@ -34,6 +35,25 @@ public class MovieDTO {
     }
 
     @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("MovieDTO{");
+        sb.append("genre='").append(genre).append('\'');
+        sb.append(", movieId='").append(movieId).append('\'');
+        sb.append(", movieName='").append(movieName).append('\'');
+        sb.append(", rating=").append(rating);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -49,13 +69,4 @@ public class MovieDTO {
         return movieId != null ? movieId.hashCode() : 0;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("MovieDTO{");
-        sb.append("genre='").append(genre).append('\'');
-        sb.append(", movieId='").append(movieId).append('\'');
-        sb.append(", movieName='").append(movieName).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
 }

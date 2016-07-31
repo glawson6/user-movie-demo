@@ -38,6 +38,9 @@
         <mysql-connector-java.version>5.1.35</mysql-connector-java.version>
 
         <maven.install.skip>true</maven.install.skip>
+        <hsqldb.version>2.3.2</hsqldb.version>
+        <dbh2.version>1.4.187</dbh2.version>
+        <derby.version>10.11.1.1</derby.version>
     </properties>
 
     <dependencies>
@@ -111,10 +114,17 @@
             <version>1.2.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- H2 DB -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${dbh2.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
-            <version>2.3.1</version>
+            <version>${hsqldb.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -125,6 +135,16 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate4</artifactId>
             <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>bson</artifactId>
+            <version>3.0.4</version>
         </dependency>
     </dependencies>
 
@@ -137,12 +157,6 @@
             <configuration>
                 <executable>true</executable>
             </configuration>
-            <!--<configuration>-->
-            <!--<jvmArguments>-->
-            <!-- -Xdebug-->
-            <!-- -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
-            <!--</jvmArguments>-->
-            <!--</configuration>-->
         </plugin>
 
         <plugin>

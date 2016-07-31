@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.EnvironmentAware;
@@ -37,7 +36,7 @@ public class DBConfiguration implements EnvironmentAware {
 
     private RelaxedPropertyResolver propertyResolver;
     private Environment env;
-    public final static String APP_NAME = "notification";
+    public final static String APP_NAME = "cfa";
 
     /*
     @Autowired(required = false)
@@ -59,7 +58,6 @@ public class DBConfiguration implements EnvironmentAware {
 
     @Bean(destroyMethod = "shutdown")
     @Qualifier(value = "dataSource")
-    @ConditionalOnProperty(name = "multitenant.enabled", havingValue = "false", matchIfMissing = true)
     public DataSource dataSource() {
         String dbURLStr = env.getProperty("DATABASE_URL");
         if (null == dbURLStr || dbURLStr.trim().toString().equals("")){
@@ -125,5 +123,6 @@ public class DBConfiguration implements EnvironmentAware {
         flyway.migrate();
 
     }
+
 
 }

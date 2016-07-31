@@ -5,21 +5,15 @@
  */
 package com.taptech.ttis.entity;
 
-import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
  *
@@ -30,42 +24,52 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Genre.findAll", query = "SELECT g FROM Genre g"),
-    @NamedQuery(name = "Genre.findByGenreId", query = "SELECT g FROM Genre g WHERE g.genreId = :genreId"),
+    @NamedQuery(name = "Genre.findByGenreid", query = "SELECT g FROM Genre g WHERE g.genreid = :genreid"),
     @NamedQuery(name = "Genre.findByName", query = "SELECT g FROM Genre g WHERE g.name = :name")})
 public class Genre implements Serializable {
     private static final long serialVersionUID = 1L;
+
     @Id
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 36)
-    @Column(name = "genreId")
-    private String genreId;
+    @Column(name = "genreid")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    private String genreid;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 25)
     @Column(name = "name")
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "genreId")
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "externalid")
+    private int externalid;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "genreid")
     private Collection<Movie> movieCollection;
 
     public Genre() {
     }
 
-    public Genre(String genreId) {
-        this.genreId = genreId;
+    public Genre(String genreid) {
+        this.genreid = genreid;
     }
 
-    public Genre(String genreId, String name) {
-        this.genreId = genreId;
+    public Genre(String genreid, String name) {
+        this.genreid = genreid;
         this.name = name;
     }
 
-    public String getGenreId() {
-        return genreId;
+    public String getGenreid() {
+        return genreid;
     }
 
-    public void setGenreId(String genreId) {
-        this.genreId = genreId;
+    public void setGenreid(String genreid) {
+        this.genreid = genreid;
     }
 
     public String getName() {
@@ -74,6 +78,14 @@ public class Genre implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getExternalid() {
+        return externalid;
+    }
+
+    public void setExternalid(int externalid) {
+        this.externalid = externalid;
     }
 
     @XmlTransient
@@ -88,7 +100,7 @@ public class Genre implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (genreId != null ? genreId.hashCode() : 0);
+        hash += (genreid != null ? genreid.hashCode() : 0);
         return hash;
     }
 
@@ -99,7 +111,7 @@ public class Genre implements Serializable {
             return false;
         }
         Genre other = (Genre) object;
-        if ((this.genreId == null && other.genreId != null) || (this.genreId != null && !this.genreId.equals(other.genreId))) {
+        if ((this.genreid == null && other.genreid != null) || (this.genreid != null && !this.genreid.equals(other.genreid))) {
             return false;
         }
         return true;
@@ -107,7 +119,7 @@ public class Genre implements Serializable {
 
     @Override
     public String toString() {
-        return "com.taptech.ttis.entity.Genre[ genreId=" + genreId + " ]";
+        return "com.taptech.ttis.entity.Genre[ genreid=" + genreid + " ]";
     }
-    
+
 }

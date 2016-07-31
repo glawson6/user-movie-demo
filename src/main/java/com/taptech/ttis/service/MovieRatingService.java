@@ -12,6 +12,6 @@ public interface MovieRatingService {
 
     Collection<MovieDTO> findUserMovies(String userId);
     Collection<MovieDTO> findTopMovies(String genre, String userId);
-    Float averageRating(String movieId);
+    Double averageRating(String movieId);
     UserMovieDTO watchedMovies(String userId);
 }

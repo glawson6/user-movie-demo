@@ -5,23 +5,15 @@
  */
 package com.taptech.ttis.entity;
 
-import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
  *
@@ -32,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Movie.findAll", query = "SELECT m FROM Movie m"),
-    @NamedQuery(name = "Movie.findByMovieId", query = "SELECT m FROM Movie m WHERE m.movieId = :movieId"),
+    @NamedQuery(name = "Movie.findByMovieid", query = "SELECT m FROM Movie m WHERE m.movieid = :movieid"),
     @NamedQuery(name = "Movie.findByName", query = "SELECT m FROM Movie m WHERE m.name = :name")})
 public class Movie implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -40,37 +32,47 @@ public class Movie implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 36)
-    @Column(name = "movieId")
-    private String movieId;
+    @Column(name = "movieid")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    private String movieid;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "name")
     private String name;
-    @JoinColumn(name = "genreId", referencedColumnName = "genreId")
+
+    @JoinColumn(name = "genreid", referencedColumnName = "genreid")
     @ManyToOne(optional = false)
-    private Genre genreId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "movieId")
+    private Genre genreid;
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "externalid")
+    private int externalid;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "movieid")
     private Collection<MovieRating> movieRatingCollection;
 
     public Movie() {
     }
 
-    public Movie(String movieId) {
-        this.movieId = movieId;
+    public Movie(String movieid) {
+        this.movieid = movieid;
     }
 
-    public Movie(String movieId, String name) {
-        this.movieId = movieId;
+    public Movie(String movieid, String name) {
+        this.movieid = movieid;
         this.name = name;
     }
 
-    public String getMovieId() {
-        return movieId;
+    public String getMovieid() {
+        return movieid;
     }
 
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
+    public void setMovieid(String movieid) {
+        this.movieid = movieid;
     }
 
     public String getName() {
@@ -81,12 +83,12 @@ public class Movie implements Serializable {
         this.name = name;
     }
 
-    public Genre getGenreId() {
-        return genreId;
+    public Genre getGenreid() {
+        return genreid;
     }
 
-    public void setGenreId(Genre genreId) {
-        this.genreId = genreId;
+    public void setGenreid(Genre genreid) {
+        this.genreid = genreid;
     }
 
     @XmlTransient
@@ -98,10 +100,18 @@ public class Movie implements Serializable {
         this.movieRatingCollection = movieRatingCollection;
     }
 
+    public int getExternalid() {
+        return externalid;
+    }
+
+    public void setExternalid(int externalid) {
+        this.externalid = externalid;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (movieId != null ? movieId.hashCode() : 0);
+        hash += (movieid != null ? movieid.hashCode() : 0);
         return hash;
     }
 
@@ -112,7 +122,7 @@ public class Movie implements Serializable {
             return false;
         }
         Movie other = (Movie) object;
-        if ((this.movieId == null && other.movieId != null) || (this.movieId != null && !this.movieId.equals(other.movieId))) {
+        if ((this.movieid == null && other.movieid != null) || (this.movieid != null && !this.movieid.equals(other.movieid))) {
             return false;
         }
         return true;
@@ -120,7 +130,7 @@ public class Movie implements Serializable {
 
     @Override
     public String toString() {
-        return "com.taptech.ttis.entity.Movie[ movieId=" + movieId + " ]";
+        return "com.taptech.ttis.entity.Movie[ movieid=" + movieid + " ]";
     }
-    
+
 }

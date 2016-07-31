@@ -1,7 +1,6 @@
 package com.taptech.ttis.dto;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by tap on 7/30/16.

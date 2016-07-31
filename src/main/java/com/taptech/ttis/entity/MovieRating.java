@@ -5,19 +5,13 @@
  */
 package com.taptech.ttis.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  *
@@ -28,7 +22,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "MovieRating.findAll", query = "SELECT m FROM MovieRating m"),
-    @NamedQuery(name = "MovieRating.findById", query = "SELECT m FROM MovieRating m WHERE m.id = :id"),
+    @NamedQuery(name = "MovieRating.findByid", query = "SELECT m FROM MovieRating m WHERE m.id = :id"),
+        @NamedQuery(name = "MovieRating.findAverageRating", query = "SELECT AVG(m.rating) FROM MovieRating m WHERE m.movieid = :movieid"),
     @NamedQuery(name = "MovieRating.findByRating", query = "SELECT m FROM MovieRating m WHERE m.rating = :rating")})
 public class MovieRating implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -37,17 +32,19 @@ public class MovieRating implements Serializable {
     @NotNull
     @Size(min = 1, max = 36)
     @Column(name = "id")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "rating")
-    private int rating;
-    @JoinColumn(name = "movieId", referencedColumnName = "movieId")
+    private double rating;
+    @JoinColumn(name = "movieid", referencedColumnName = "movieid")
     @ManyToOne(optional = false)
-    private Movie movieId;
-    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private Movie movieid;
+    @JoinColumn(name = "userid", referencedColumnName = "userid")
     @ManyToOne(optional = false)
-    private User userId;
+    private User userid;
 
     public MovieRating() {
     }
@@ -61,36 +58,36 @@ public class MovieRating implements Serializable {
         this.rating = rating;
     }
 
-    public String getId() {
+    public String getid() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setid(String id) {
         this.id = id;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
-    public Movie getMovieId() {
-        return movieId;
+    public Movie getMovieid() {
+        return movieid;
     }
 
-    public void setMovieId(Movie movieId) {
-        this.movieId = movieId;
+    public void setMovieid(Movie movieid) {
+        this.movieid = movieid;
     }
 
-    public User getUserId() {
-        return userId;
+    public User getUserid() {
+        return userid;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUserid(User userid) {
+        this.userid = userid;
     }
 
     @Override
@@ -117,5 +114,5 @@ public class MovieRating implements Serializable {
     public String toString() {
         return "com.taptech.ttis.entity.MovieRating[ id=" + id + " ]";
     }
-    
+
 }

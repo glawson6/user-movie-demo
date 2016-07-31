@@ -3,15 +3,15 @@ package com.taptech.ttis;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 
-@SpringBootApplication
-
+//@SpringBootApplication
+@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
 @ComponentScan
 public class Application {
 
@@ -31,5 +31,6 @@ public class Application {
             return showJSONPretty;
         }
     }
+
 
 }
