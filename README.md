@@ -34,8 +34,102 @@ o    Given a genre such as "action" and a userId, return the top 5 movies for th
  
  There is a ddl.sql and sample_data.sql in src/main/resources. The custom APIs are implemnted in MovieStatsController
  
+### Discover the APIs
+
+Spring Data Rest APIs
+```
+$ http -v GET localhost:8080
+GET / HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8080
+User-Agent: HTTPie/0.9.4
+
+
+
+HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Date: Mon, 01 Aug 2016 02:10:12 GMT
+Server: Apache-Coyote/1.1
+Transfer-Encoding: chunked
+X-Application-Context: application:production
+
+{
+    "_links": {
+        "genres": {
+            "href": "http://localhost:8080/genres"
+        },
+        "movieRatings": {
+            "href": "http://localhost:8080/movieRatings"
+        },
+        "movies": {
+            "href": "http://localhost:8080/movies"
+        },
+        "profile": {
+            "href": "http://localhost:8080/profile"
+        },
+        "users": {
+            "href": "http://localhost:8080/users"
+        }
+    }
+}
+```
+
+Spring MVC mappings.
+```
+$ http -v GET localhost:8888/mappings
+GET /mappings HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8888
+User-Agent: HTTPie/0.9.4
+
+
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Mon, 01 Aug 2016 02:10:42 GMT
+Server: Apache-Coyote/1.1
+Transfer-Encoding: chunked
+
+{
+    "/**": {
+        "bean": "resourceHandlerMapping"
+    },
+    "/**/favicon.ico": {
+        "bean": "faviconHandlerMapping"
+    },
+    "/webjars/**": {
+        "bean": "resourceHandlerMapping"
+    },
+    "{[/api/movie/top/{genre}/{userId}],methods=[GET]}": {
+        "bean": "requestMappingHandlerMapping",
+        "method": "public org.springframework.http.ResponseEntity<?> com.taptech.ttis.controller.MovieStatsController.topMovies(java.lang.String,java.lang.String) throws java.lang.Exception"
+    },
+    "{[/api/movie/watched/{userId}],methods=[GET]}": {
+        "bean": "requestMappingHandlerMapping",
+        "method": "public org.springframework.http.ResponseEntity<?> com.taptech.ttis.controller.MovieStatsController.watchedMovies(java.lang.String) throws java.lang.Exception"
+    },
+    "{[/api/movie/{movieId}/averageRating],methods=[GET]}": {
+        "bean": "requestMappingHandlerMapping",
+        "method": "public org.springframework.http.ResponseEntity<?> com.taptech.ttis.controller.MovieStatsController.averageRating(java.lang.String) throws java.lang.Exception"
+    },
+    "{[/error],produces=[text/html]}": {
+        "bean": "requestMappingHandlerMapping",
+        "method": "public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)"
+    },
+    "{[/error]}": {
+        "bean": "requestMappingHandlerMapping",
+        "method": "public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)"
+    }
+}
+
+
+```
  
-# API test functionality
+### API test functionality
 
 Given a userId, return all movies that user has watched and the total count, as well as the rating for that movie.
 Request
