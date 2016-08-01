@@ -2,72 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe095444-be99-4ed6-b1e5-23d69a55cd28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_btf_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_jackson_coreutils_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_json_patch_1_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_msg_simple_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_187.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mashape_unirest_unirest_java_1_4_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpasyncclient_4_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_nio_4_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_atteo_evo_inflector_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_0_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_rest_1_3_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_core_2_4_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_webmvc_2_4_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_19_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_4_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/DatabaseConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/RepositoryConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/util/MovieDTORowMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ddl.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/sample_data.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/addGenres.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/addUsers.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/generateUUIDs.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/getGenres.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/getMovies.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/getSenators.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/getSomeMovies.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/populateAll.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/utils/uuids.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_2_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/user_movie_demo.sql" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hsqldb_hsqldb_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hsqldb_hsqldb_2_3_2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_1_3_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_1_3_5_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/BaseControllerTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/MovieStatsControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/DBConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/DBConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/controller/MovieStatsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/controller/MovieStatsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/dto/MovieDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/dto/MovieDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/dto/UserMovieDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/dto/UserMovieDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/Genre.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/Genre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/Movie.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/Movie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/MovieRating.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/MovieRating.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/GenreRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/GenreRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/MovieRatingRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/MovieRatingRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/MovieRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/MovieRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingService.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-development.properties" afterPath="$PROJECT_DIR$/src/main/resources/application-development.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-production.properties" afterPath="$PROJECT_DIR$/src/main/resources/application-production.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.0.0_1__baseline.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.0.0_1__baseline.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user-movie-demo.iml" afterPath="$PROJECT_DIR$/user-movie-demo.iml" />
     </list>
     <ignored path="user-movie-demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DatabaseConfiguration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/DatabaseConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,16 +36,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-production.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-production.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -143,15 +60,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.9556213">
-                <caret line="459" column="48" selection-start-line="459" selection-start-column="48" selection-end-line="459" selection-end-column="48" />
+              <first_editor vertical-scroll-proportion="0.5325444">
+                <caret line="34" column="117" selection-start-line="34" selection-start-column="117" selection-end-line="34" selection-end-column="117" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -159,21 +76,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sample_data.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sample_data.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/sample_data.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.844904">
+            <state vertical-scroll-proportion="-10.592592">
               <caret line="5581" column="0" selection-start-line="5581" selection-start-column="0" selection-end-line="5581" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uuids.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/utils/uuids.txt">
+      <file leaf-file-name="MovieRatingServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+              <folding>
+                <marker date="1470006075000" expanded="true" signature="2556:2772" placeholder="SELECT mv.mo... MovieRating" />
+                <marker date="1470006075000" expanded="true" signature="2837:3422" placeholder="select mv.mo... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieStatsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/controller/MovieStatsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="86" selection-start-line="21" selection-start-column="86" selection-end-line="21" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieStatsControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/MovieStatsControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/BaseControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -278,9 +228,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/application-production.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/taptech/ttis/DatabaseConfiguration.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/user_movie_demo.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V1.0.0_1__baseline.sql" />
+        <option value="$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/BaseControllerTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -475,6 +426,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -758,6 +717,7 @@
       <recent name="com.taptech.ttis.dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.taptech.ttis.controller" />
       <recent name="com.taptech.ttis.repository" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -1307,16 +1267,16 @@
       <updated>1469830203402</updated>
       <workItem from="1469830207578" duration="1017000" />
       <workItem from="1469899899680" duration="1709000" />
-      <workItem from="1469925083381" duration="47879000" />
+      <workItem from="1469925083381" duration="49380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50605000" />
+    <option name="totallyTimeSpent" value="52106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1333" y="360" width="1440" height="877" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1329,7 +1289,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1584,23 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
-          <folding>
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#4188#4189#0" expanded="true" />
-            <element signature="e#4224#4225#0" expanded="true" />
-            <element signature="e#4289#4290#0" expanded="true" />
-            <element signature="e#4339#4340#0" expanded="true" />
-            <marker date="1470006075000" expanded="true" signature="2556:2772" placeholder="SELECT mv.mo... MovieRating" />
-            <marker date="1470006075000" expanded="true" signature="2837:3422" placeholder="select mv.mo... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/entity/MovieRating.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1679,14 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/controller/MovieStatsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-development.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1747,20 +1682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.9556213">
-            <caret line="459" column="48" selection-start-line="459" selection-start-column="48" selection-end-line="459" selection-end-column="48" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.0_1__baseline.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.87037">
@@ -1779,9 +1700,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sample_data.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.844904">
+        <state vertical-scroll-proportion="-10.592592">
           <caret line="5581" column="0" selection-start-line="5581" selection-start-column="0" selection-end-line="5581" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/service/MovieRatingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+          <folding>
+            <marker date="1470006075000" expanded="true" signature="2556:2772" placeholder="SELECT mv.mo... MovieRating" />
+            <marker date="1470006075000" expanded="true" signature="2837:3422" placeholder="select mv.mo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/BaseControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="73" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taptech/ttis/controller/MovieStatsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="86" selection-start-line="21" selection-start-column="86" selection-end-line="21" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/taptech/ttis/controller/MovieStatsControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.5325444">
+            <caret line="34" column="117" selection-start-line="34" selection-start-column="117" selection-end-line="34" selection-end-column="117" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

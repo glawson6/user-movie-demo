@@ -16,11 +16,27 @@ o    Given a genre such as "action" and a userId, return the top 5 movies for th
 ·         Gzip the completed database, your API code, plus the ddl.sql and sample_data.sql and submit them.
 · 
 
+# Highlights of app include
+
+    Spring Data Rest
+    Custom Spring Controllers for API
+    JPA
+    Spring JdbcTemplate
+    Custom Spring Boot configuration classes
+    Spring Profile Configuration
+    Embedded database configuartion
+    MySQL database configuration
+    Flyway database migration
+
 ### To run this app
 
  mvn clean package && java -Dspring.profiles.active=production -jar target/user-movie-demo.jar 
  
+ There is a ddl.sql and sample_data.sql in src/main/resources. The custom APIs are implemnted in MovieStatsController
  
+ 
+# API test functionality
+
 Given a userId, return all movies that user has watched and the total count, as well as the rating for that movie.
 Request
 ```
