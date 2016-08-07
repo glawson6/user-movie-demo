@@ -32,7 +32,7 @@ o    Given a genre such as "action" and a userId, return the top 5 movies for th
 
  mvn clean package && java -Dspring.profiles.active=production -jar target/user-movie-demo.jar 
  
- There is a ddl.sql and sample_data.sql in src/main/resources. The custom APIs are implemnted in MovieStatsController
+ There is a ddl.sql and sample_data.sql in src/main/resources. The custom APIs are implemented in MovieStatsController
  
 ### Discover the APIs
 

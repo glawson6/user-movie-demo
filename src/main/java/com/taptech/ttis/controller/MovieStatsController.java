@@ -24,6 +24,8 @@ public class MovieStatsController extends BaseController {
     @Autowired
     MovieRatingService movieRatingService;
 
+    public static final String NO_MOVIES_FOUND = "No movies found for movieId=";
+
     @RequestMapping(value = "/watched/{userId}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> watchedMovies(@PathVariable String userId) throws Exception {
@@ -31,7 +33,7 @@ public class MovieStatsController extends BaseController {
         ResponseEntity<?> responseEntity = null;
         UserMovieDTO userMovieDTO = movieRatingService.watchedMovies(userId);
         if (null == userMovieDTO || null == userMovieDTO.getMoviesWatched() || userMovieDTO.getMoviesWatched().size() <= 0){
-            StringBuilder message = new StringBuilder("No movies found for movieId=");
+            StringBuilder message = new StringBuilder(NO_MOVIES_FOUND);
             message.append(userMovieDTO);
             responseEntity = new ResponseEntity<String>(message.toString(), HttpStatus.NOT_FOUND);
         } else {
