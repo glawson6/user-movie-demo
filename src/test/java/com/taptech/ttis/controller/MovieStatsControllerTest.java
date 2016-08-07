@@ -21,12 +21,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 import static org.hamcrest.Matchers.any;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
@@ -52,12 +51,16 @@ public class MovieStatsControllerTest {
 
     private static final String USER_ID_EMPTY = "";
     private static final String USER_ID_NOT_EMPTY = "123456";
+    private static final String MOVIE_ID = UUID.randomUUID().toString();
     private static final String MOVIE_NAME = "Star Wars";
     private static final Double MOVIE_RATING = 8.5d;
-
+    private static final String GENRE = "Adventure";
     private static final Integer ZERO = new Integer(0);
-
     private ObjectMapper objectMapper = new ObjectMapper();
+
+    //Arrange
+    //Act
+    //Assert
 
     @Test
     public void testWatchedMovies_userIdEmpty() throws Exception {
@@ -69,7 +72,6 @@ public class MovieStatsControllerTest {
         //Assert
         assertNotNull("Response should not be null",responseEntity);
         String responseString = (String)responseEntity.getBody();
-
         assertTrue("Should return 404", responseEntity.getStatusCode().equals(HttpStatus.NOT_FOUND));
         assertTrue("Should contain String "+msg, responseString.contains(msg));
     }
@@ -82,13 +84,82 @@ public class MovieStatsControllerTest {
         ResponseEntity<?> responseEntity = movieStatsController.watchedMovies(USER_ID_NOT_EMPTY);
         //Assert
         assertNotNull("Response should not be null",responseEntity);
-
-        logger.info("");
         assertTrue("Should return 200", responseEntity.getStatusCode().equals(HttpStatus.OK));
-        assertNotNull("Response should not be null",responseEntity);
         UserMovieDTO userMovieDTO = (UserMovieDTO)responseEntity.getBody();
+        assertNotNull("Response should not be null",responseEntity);
         assertNotNull("UserMovieDTO should not be null",userMovieDTO);
         assertFalse("Movie List should not be empty", userMovieDTO.getMoviesWatched().isEmpty());
+    }
+
+    @Test
+    public void testAverageRating_NoRatingsFound() throws Exception {
+        //Arrange
+        String msg = MovieStatsController.NO_RATINGS_FOUND;
+        when(movieRatingService.averageRating(anyString())).thenReturn(null);
+        //Act
+        ResponseEntity<?> responseEntity = movieStatsController.averageRating(MOVIE_ID);
+        //Assert
+        assertNotNull("Response should not be null",responseEntity);
+        String responseString = (String)responseEntity.getBody();
+        assertTrue("Should return 404", responseEntity.getStatusCode().equals(HttpStatus.NOT_FOUND));
+        assertTrue("Should contain String "+msg, responseString.contains(msg));
+    }
+
+    @Test
+    public void testAverageRating_RatingsFound() throws Exception {
+        //Arrange
+        when(movieRatingService.averageRating(anyString())).thenReturn(MOVIE_RATING);
+        //Act
+        ResponseEntity<?> responseEntity = movieStatsController.averageRating(MOVIE_ID);
+        //Assert
+        assertNotNull("Response should not be null",responseEntity);
+        String responseString = (String)responseEntity.getBody();
+        assertTrue("Should return 404", responseEntity.getStatusCode().equals(HttpStatus.OK));
+        assertEquals("Ratings should be equal", MOVIE_RATING.toString(),responseString);
+    }
+
+    @Test
+    public void testTopMovies_MoviesFoundNull() throws Exception {
+        //Arrange
+        String msg = MovieStatsController.NO_USER_MOVIES_FOUND;
+        when(movieRatingService.findTopMovies(anyString(), anyString())).thenReturn(null);
+        //Act
+        ResponseEntity<?> responseEntity = movieStatsController.topMovies(GENRE, USER_ID_NOT_EMPTY);
+        //Assert
+        assertNotNull("Response should not be null",responseEntity);
+        String responseString = (String)responseEntity.getBody();
+        assertTrue("Should return 404", responseEntity.getStatusCode().equals(HttpStatus.NOT_FOUND));
+        assertTrue("Should contain String "+msg, responseString.contains(msg));
+    }
+
+    @Test
+    public void testTopMovies_MoviesFoundEmptyList() throws Exception {
+        //Arrange
+        String msg = MovieStatsController.NO_USER_MOVIES_FOUND;
+        when(movieRatingService.findTopMovies(anyString(), anyString())).thenReturn(Collections.emptyList());
+        //Act
+        ResponseEntity<?> responseEntity = movieStatsController.topMovies(GENRE, USER_ID_NOT_EMPTY);
+        //Assert
+        assertNotNull("Response should not be null",responseEntity);
+        String responseString = (String)responseEntity.getBody();
+        assertTrue("Should return 404", responseEntity.getStatusCode().equals(HttpStatus.NOT_FOUND));
+        assertTrue("Should contain String "+msg, responseString.contains(msg));
+    }
+
+    @Test
+    public void testTopMovies_MoviesFound() throws Exception {
+        //Arrange
+        String msg = MovieStatsController.NO_USER_MOVIES_FOUND;
+        when(movieRatingService.findTopMovies(anyString(), anyString())).thenReturn(getMovieList());
+        //Act
+        ResponseEntity<?> responseEntity = movieStatsController.topMovies(GENRE, USER_ID_NOT_EMPTY);
+        //Assert
+        assertNotNull("Response should not be null",responseEntity);
+        assertTrue("Should return 200", responseEntity.getStatusCode().equals(HttpStatus.OK));
+        List<MovieDTO> movieDTOs = (List<MovieDTO>)responseEntity.getBody();
+        assertNotNull("Response should not be null",responseEntity);
+        assertNotNull("UserMovieDTO should not be null",movieDTOs);
+        assertFalse("Movie List should not be empty", movieDTOs.isEmpty());
     }
 
     private UserMovieDTO getUserIdUserDTO(String userId) {
@@ -98,18 +169,26 @@ public class MovieStatsControllerTest {
         movieDTO.setMovieId(UUID.randomUUID().toString());
         movieDTO.setMovieName(MOVIE_NAME);
         movieDTO.setRating(MOVIE_RATING);
-        userMovieDTO.setMoviesWatched(Collections.singleton(movieDTO));
-        userMovieDTO.setTotalCount(1);
+        userMovieDTO.setMoviesWatched(Collections.singletonList(movieDTO));
+        userMovieDTO.setTotalCount(userMovieDTO.getMoviesWatched().size());
         userMovieDTO.setUserId(userId);
-        return new UserMovieDTO();
+        return userMovieDTO;
     }
 
+    private List<MovieDTO> getMovieList(){
+        MovieDTO movieDTO = new MovieDTO();
+        movieDTO.setGenre(UUID.randomUUID().toString());
+        movieDTO.setMovieId(UUID.randomUUID().toString());
+        movieDTO.setMovieName(MOVIE_NAME);
+        movieDTO.setRating(MOVIE_RATING);
+        return Collections.singletonList(movieDTO);
+    }
 
     private UserMovieDTO getUserIdEmptyUserDTO(String userId) {
         UserMovieDTO userMovieDTO = new UserMovieDTO();
         userMovieDTO.setMoviesWatched(Collections.EMPTY_LIST);
-        userMovieDTO.setTotalCount(0);
+        userMovieDTO.setTotalCount(userMovieDTO.getMoviesWatched().size());
         userMovieDTO.setUserId(userId);
-        return new UserMovieDTO();
+        return userMovieDTO;
     }
 }

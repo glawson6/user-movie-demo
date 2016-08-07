@@ -19,17 +19,19 @@ import java.util.List;
 @RequestMapping("/api/movie")
 public class MovieStatsController extends BaseController {
 
-    private static final Logger logger = LoggerFactory.getLogger(BaseController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MovieStatsController.class);
 
     @Autowired
     MovieRatingService movieRatingService;
 
     public static final String NO_MOVIES_FOUND = "No movies found for movieId=";
+    public static final String NO_USER_MOVIES_FOUND = "No movies found for userId=";
+    public static final String NO_RATINGS_FOUND = "No rating found for movieId=";
 
     @RequestMapping(value = "/watched/{userId}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> watchedMovies(@PathVariable String userId) throws Exception {
-        logger.debug("watchedMovies({})", new Object[] {userId});
+        logger.debug("watchedMovies(userId => {})", new Object[] {userId});
         ResponseEntity<?> responseEntity = null;
         UserMovieDTO userMovieDTO = movieRatingService.watchedMovies(userId);
         if (null == userMovieDTO || null == userMovieDTO.getMoviesWatched() || userMovieDTO.getMoviesWatched().size() <= 0){
@@ -45,11 +47,11 @@ public class MovieStatsController extends BaseController {
     @RequestMapping(value = "/{movieId}/averageRating", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> averageRating(@PathVariable String movieId) throws Exception {
-        logger.debug("averageRating({})", new Object[] {movieId});
+        logger.debug("averageRating(movieId => {})", new Object[] {movieId});
         ResponseEntity<?> responseEntity = null;
         Double rating = movieRatingService.averageRating(movieId);
         if (null == rating){
-            StringBuilder message = new StringBuilder("No rating found for movieId=");
+            StringBuilder message = new StringBuilder(NO_RATINGS_FOUND);
             message.append(movieId);
             responseEntity = new ResponseEntity<String>(message.toString(), HttpStatus.NOT_FOUND);
         } else {
@@ -61,11 +63,11 @@ public class MovieStatsController extends BaseController {
     @RequestMapping(value = "/top/{genre}/{userId}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> topMovies(@PathVariable String genre, @PathVariable String userId) throws Exception {
-        logger.debug("topMovies({})", new Object[] {genre, userId});
+        logger.debug("topMovies(genre => {} , userId => {})", new Object[] {genre, userId});
         ResponseEntity<?> responseEntity = null;
         List<MovieDTO> movieDTOs = (List<MovieDTO>)movieRatingService.findTopMovies(genre, userId);
         if (null == movieDTOs || movieDTOs.size() <= 0){
-            StringBuilder message = new StringBuilder("No movies found for userId=");
+            StringBuilder message = new StringBuilder(NO_USER_MOVIES_FOUND);
             message.append(userId);
             message.append("");
             responseEntity = new ResponseEntity<String>(message.toString(), HttpStatus.NOT_FOUND);
