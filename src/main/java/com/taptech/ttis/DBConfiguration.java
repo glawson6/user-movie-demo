@@ -30,7 +30,7 @@ import java.util.Map;
 @EntityScan({ "com.taptech.ttis.entity" })
 @EnableJpaRepositories("com.taptech.ttis.repository")
 @EnableTransactionManagement
-@Profile({"development"})
+@Profile({"development","dokku"})
 public class DBConfiguration implements EnvironmentAware {
     private static final Logger logger = LoggerFactory.getLogger(DBConfiguration.class);
 
