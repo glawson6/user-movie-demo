@@ -80,6 +80,7 @@ public class MovieRatingServiceImpl implements MovieRatingService {
             "JOIN mv.genreid g " +
             "WHERE mr.userid = :userid " +
             "GROUP BY mv.movieid";
+    
 
     private static final String AVERAGE_GENRE_OTHER_USERS = "select mv.movieid, mv.name, avg(mr.rating) as avg, g.name as genre from movie_rating mr " +
             "join movie mv on mv.movieid = mr.movieid " +
