@@ -2,3 +2,6 @@
 target/
 .idea/
 publish.properties
+
+dokku-deploy.txt
+
